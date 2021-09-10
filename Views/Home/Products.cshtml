@@ -1,0 +1,79 @@
+@using RocketElevator.Models;
+@model ProductsViewModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<section id="slider" class="fullheight">
+    <div class="swiper-container" data-effect="slide" data-autoplay="false">
+        <div class="swiper-wrapper">
+            <!-- SLIDE 1 -->
+            <div class="swiper-slide" style="background-image: url('/../../Assets/pexels-photo-6295324.jpeg');">
+                <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+                <div class="display-table">
+                    <div class="display-table-cell vertical-align-middle">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="text-center col-md-8 col-12 offset-md-2">
+                                    <h1 class="bold font-raleway wow fadeInUp" data-wow-delay="0.4s">My Products</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CONTACT -->
+<section>  
+        <table class="table" >
+            <tr style="color: white;">
+                <th>Building Id</th>
+                <th>Column Id</th>
+                <th>Battery Id</th>
+                <th>Elevator Seial Number</th>
+            </tr>
+            <tr >
+                <td style="vertical-align: top;">
+                    @foreach (var Building in Model.Buildings)
+                    {
+                    <p value="@Building.Id" style="vertical-align: top;">Building with ID: @Building.Id</p>
+                    }    
+                </td>
+                <td style="vertical-align: top;">
+                    @foreach (var item in Model.Batteries)
+                    {
+                        <p value="@item.Id" style="vertical-align: top;" >Battery with ID: @item.Id</p>
+                    }
+                </td>
+                <td style="vertical-align: top;">
+                    @foreach (var Columns in Model.Columns)
+                    {
+                        <p value="@Columns.Id" style="vertical-align: top;" >Column with ID: @Columns.Id</p>
+                    }
+                </td>
+                <td style="vertical-align: top;">
+                    @foreach (var Elevators in Model.Elevators)
+                    {
+                        <p value="@Elevators.Id" style="vertical-align: top;" >Elevator with Serial: @Elevators.SerialNumber</p>
+                    }
+                </td>
+            </tr>
+        </table>
+</section>
+<style>
+    table {
+        border-spacing: 0.5rem;
+    }
+    td {
+        padding: 0.5rem;
+    }
+    tr:nth-child(1) {background: black }
+    td:nth-child(1) { background: #cfd8dc; }
+    td:nth-child(2) { background: #eceff1; }
+    td:nth-child(3) { background: #cfd8dc; }
+    td:nth-child(4) { background: #eceff1; }
+</style>

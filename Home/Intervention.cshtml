@@ -1,0 +1,161 @@
+@using RocketElevator.Models;
+@model InterventionFormViewModel
+@{
+    ViewData["Title"] = "Intervention";
+}
+
+<section id="slider" class="fullheight">
+
+    <div class="swiper-container" data-effect="slide" data-autoplay="false">
+        <div class="swiper-wrapper">
+
+            <!-- SLIDE 1 -->
+            <div class="swiper-slide" style="background-image: url('/../../Assets/pexels-olga-lioncat-7245354.jpg');">
+                <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+                <div class="display-table">
+                    <div class="display-table-cell vertical-align-middle">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="text-center col-md-8 col-12 offset-md-2">
+                                    <h1 class="bold font-raleway wow fadeInUp" data-wow-delay="0.4s">Intervention Form</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <form method="POST" action="@Url.RouteUrl("Intervention")">
+            <div id="building_id" class="col-md-4">
+                <label id="building_label">Building List:</label>
+                <select id="building_id_selector" required class="form-control pointer" name="intervention[BuildingID]">
+                    <option value="nulltest">---None---</option>
+                    @foreach (var Building in Model.Buildings)
+                    {
+                        <option value="@Building.Id">Building with ID: @Building.Id</option>
+                    }
+                </select>
+                <br>
+            </div>
+            <div id="battery_id" class="col-md-4">
+                <label id="battery_label">Battery List:</label>
+                <select id="battery_id_selector" required class="form-control pointer" name="intervention[BatteryID]">
+                    <option value="nulltest">---None---</option>
+                    @foreach (var item in Model.Batteries)
+                    {
+                        <option value="@item.Id">Battery with ID: @item.Id</option>
+                    }
+                </select>
+                <br>
+            </div>
+            <div id="column_id" class="col-md-4">
+                <label id="column_label">Column List:</label>
+                <select id="column_id_selector" required class="form-control pointer" name="intervention[ColumnID]">
+                    <option value="nulltest">---None---</option>
+                    @foreach (var Columns in Model.Columns)
+                    {
+                        <option value="@Columns.Id">Column with ID: @Columns.Id</option>
+                    }
+                </select>
+                <br>
+            </div>
+            <div id="elevator_id" class="col-md-4">
+                <label id="elevator_label">Elevator List:</label>
+                <select id="elevator_id_selector" required class="form-control pointer" name="intervention[ElevatorID]">
+                    <option value="nulltest">---None---</option>
+                    @foreach (var Elevators in Model.Elevators)
+                    {
+                        <option value="@Elevators.SerialNumber">Serial: @Elevators.SerialNumber</option>
+                    }
+                </select>
+            </div>
+            <br>
+            <div id="description" class="col-md-4">
+                <label>Description:</label>
+                <textarea cols="100" id="person_description" name="Report" rows="4"></textarea>
+            </div>
+            <br>
+            <div class="col-md-4">
+                <button class="btn btn-3d btn-lg btn-red wow fadeIn" data-wow-delay="1.5s" type="submit">SUBMIT</button>
+            </div>
+            @{if (ViewData.ContainsKey("ErrorMessage"))
+                {
+                    <p id="status" class="invalid-feedback d-block text-danger" role="alert">
+                        @ViewData["ErrorMessage"].ToString()
+                    </p>
+                }
+            }
+            @{if (ViewData.ContainsKey("SuccessMessage"))
+                {
+                    <p id="status" class="invalid-feedback d-block text-danger" role="alert" style="color:green">
+                        @ViewData["SuccessMessage"].ToString()
+                    </p>
+                }
+            }
+        </form>
+      
+
+        @section scripts {
+            <script>jQuery(document).ready(function () {
+
+                    $("#battery_id_selector").hide();
+                    $("#battery_id").hide();
+
+                    $("#column_id_selector").hide();
+                    $("#column_id").hide();
+
+                    $("#elevator_id_selector").hide();
+                    $("#elevator_id").hide();
+
+                });
+
+                $('#building_id_selector').change(function () {
+                    ShowHide();
+                });
+
+                $('#battery_id_selector').change(function () {
+                    ShowHide();
+                });
+
+                $('#column_id_selector').change(function () {
+                    ShowHide();
+                });
+
+                function ShowHide() {
+
+                    $("#battery_id_selector").hide();
+                    $("#battery_id").hide();
+
+                    $("#column_id_selector").hide();
+                    $("#column_id").hide();
+
+                    $("#elevator_id_selector").hide();
+                    $("#elevator_id").hide();
+
+                    if ($("#building_id_selector").val() != "nulltest") {
+                        $("#battery_id_selector").show();
+                        $("#battery_id").show();
+
+                        if ($("#battery_id_selector").val() != "nulltest") {
+                            $("#column_id_selector").show();
+                            $("#column_id").show();
+
+                            if ($("#column_id_selector").val() != "nulltest") {
+                                $("#elevator_id_selector").show();
+                                $("#elevator_id").show();
+                            }
+                        }
+                    }
+                }
+            </script>
+        }
+    </div>
+</section>

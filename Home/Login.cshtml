@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+
+<!-- SLIDER -->
+<section id="slider" class="fullheight">
+
+    <!--
+        SWIPPER SLIDER PARAMS
+
+        data-effect="slide|fade|coverflow"
+        data-autoplay="2500|false"
+    -->
+    <div class="swiper-container" data-effect="slide" data-autoplay="false">
+        <div class="swiper-wrapper">
+
+            <!-- SLIDE 1 -->
+            <div class="swiper-slide" style="background-image: url('/../../Assets/AdobeStock_122227340.jpeg');">
+                <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+                <div class="display-table">
+                    <div class="display-table-cell vertical-align-middle">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="text-center col-md-8 col-12 offset-md-2">
+
+                                    <h1 class="bold font-raleway wow fadeInUp" data-wow-delay="0.4s">ROCKET ELEVAORS PORTAL</h1>
+                                    <p class="lead font-lato fw-300 hidden-xs-down wow fadeInUp" data-wow-delay="0.6s">Elevate safety, speed and style!</p>
+
+                                    <form method="POST" action="@Url.RouteUrl("Login")">
+                                        <div class="container">
+                                            <input type="text" placeholder=" Username" name="email" required>
+                                            <input type="password" placeholder=" Password" name="password" required>
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember" /> Remember me
+                                            </label>
+                                            <button type="submit" class="btn btn-3d btn-lg btn-red wow fadeIn" data-wow-delay="1.5s">LOGIN</button>
+                                        </div>
+                                        @{if (ViewData.ContainsKey("LoginError"))
+                                            {
+                                                <p id="status" class="invalid-feedback d-block text-danger" role="alert">
+                                                    @ViewData["LoginError"].ToString()
+                                                </p>
+                                            }
+                                        }
+                                        @*<div class="container">
+                                            <span><a style="color: white" href="#">Sign Up</a></span>
+                                            <span><a style="color: white" href="#">Forgot password?</a></span>
+                                        </div>*@
+                                    </form>
+
+                                    @*<ul class="navbar-nav">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                        </li>
+                                    </ul>*@
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /SLIDE 1 -->
+
+
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- /SLIDER -->
+<!-- CALLOUT -->
