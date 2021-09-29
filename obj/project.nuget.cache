@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U0/ae34cOWjQiE2Czad72B769fRpNAyuLn9cUG11muQiYQdLhFp59lY0ySf5etPPXy8AyHnwXb4VEQDH5lGJOw==",
+  "dgSpecHash": "dw0A3E2C8kHd90MPDy6bu7Kb+bhcIpnBS8cTbijS71vFU3/5iIwERC46vWLdowgH5anxp+qVy3nJSCPjCwCQ0Q==",
   "success": true,
-  "projectFilePath": "/Users/emmanuelsarpong/Desktop/rocket-elevators-main/RocketElevator.csproj",
+  "projectFilePath": "/Users/emmanuelsarpong/Desktop/Rocket_Elevators_Customer_Portal/Rocket_Elevators_Customer_Portal/RocketElevator.csproj",
   "expectedPackageFiles": [
     "/Users/emmanuelsarpong/.nuget/packages/bouncycastle.netcore/1.8.5/bouncycastle.netcore.1.8.5.nupkg.sha512",
     "/Users/emmanuelsarpong/.nuget/packages/google.protobuf/3.11.4/google.protobuf.3.11.4.nupkg.sha512",

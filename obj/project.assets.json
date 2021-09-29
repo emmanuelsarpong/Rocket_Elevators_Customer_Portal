@@ -1669,11 +1669,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/emmanuelsarpong/Desktop/rocket-elevators-main/RocketElevator.csproj",
+      "projectUniqueName": "/Users/emmanuelsarpong/Desktop/Rocket_Elevators_Customer_Portal/Rocket_Elevators_Customer_Portal/RocketElevator.csproj",
       "projectName": "RocketElevator",
-      "projectPath": "/Users/emmanuelsarpong/Desktop/rocket-elevators-main/RocketElevator.csproj",
+      "projectPath": "/Users/emmanuelsarpong/Desktop/Rocket_Elevators_Customer_Portal/Rocket_Elevators_Customer_Portal/RocketElevator.csproj",
       "packagesPath": "/Users/emmanuelsarpong/.nuget/packages/",
-      "outputPath": "/Users/emmanuelsarpong/Desktop/rocket-elevators-main/obj/",
+      "outputPath": "/Users/emmanuelsarpong/Desktop/Rocket_Elevators_Customer_Portal/Rocket_Elevators_Customer_Portal/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/emmanuelsarpong/.nuget/NuGet/NuGet.Config"
